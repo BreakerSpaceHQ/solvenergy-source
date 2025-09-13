@@ -1,23 +1,26 @@
 
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import SolarPanelImage from "./products/solar-panel.avif";
+import HybridInverterImage from "./products/hybrid-inverter.avif";
+import BatteriesImage from "./products/batteries.png";
 
 const ProductsSection = () => {
   const products = [
     {
       title: "Solar Panels",
       description: "High-efficiency solar panels from top brands that convert sunlight into clean electricity. Built to last with performance guarantees.",
-      image: "./products/solar-panel.avif",
+      image: SolarPanelImage,
     },
     {
       title: "Hybrid Inverters",
       description: "Smart inverters that efficiently convert DC to AC power while managing energy flow between solar panels, batteries, and the grid.",
-      image: "./products/hybrid-inverter.avif",
+      image: HybridInverterImage,
     },
     {
       title: "Battery Storage",
       description: "Advanced battery systems that store excess solar energy for use during evenings, cloudy days, or power outages.",
-      image: "./products/batteries.png",
+      image: BatteriesImage,
     },
   ];
 

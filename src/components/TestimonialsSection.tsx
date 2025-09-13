@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Play, Image as ImageIcon, Camera } from "lucide-react";
 import Lightbox from "@/components/ui/lightbox";
-import TestimonialImage1 from "./testimonials/image1.jpg";
-import TestimonialImage2 from "./testimonials/image2.jpg";
+import TestimonialImage1 from "../testimonials/image1.jpg";
+import TestimonialImage2 from "../testimonials/image2.jpg";
 
 const TestimonialsSection = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);

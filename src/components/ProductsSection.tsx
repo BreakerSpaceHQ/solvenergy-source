@@ -1,9 +1,9 @@
 
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import SolarPanelImage from "./products/solar-panel.avif";
-import HybridInverterImage from "./products/hybrid-inverter.avif";
-import BatteriesImage from "./products/batteries.png";
+import SolarPanelImage from "../products/solar-panel.avif";
+import HybridInverterImage from "../products/hybrid-inverter.avif";
+import BatteriesImage from "../products/batteries.png";
 
 const ProductsSection = () => {
   const products = [

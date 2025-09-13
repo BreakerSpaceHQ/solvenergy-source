@@ -58,7 +58,7 @@ const HybridInverters = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg fade-in">
                 <img
-                  src="/products/hybrid-inverter.avif"
+                  src="./products/hybrid-inverter.avif"
                   alt="Hybrid Inverter System"
                   className="w-full h-auto object-cover"
                 />

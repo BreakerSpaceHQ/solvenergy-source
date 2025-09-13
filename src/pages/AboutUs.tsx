@@ -54,7 +54,7 @@ const AboutUs = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <img
-                  src="/about-us/about-us.avif"
+                  src="./about-us/about-us.avif"
                   alt="Solar store team"
                   className="rounded-lg shadow-xl"
                 />

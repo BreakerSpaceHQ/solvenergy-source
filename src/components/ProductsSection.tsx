@@ -7,17 +7,17 @@ const ProductsSection = () => {
     {
       title: "Solar Panels",
       description: "High-efficiency solar panels from top brands that convert sunlight into clean electricity. Built to last with performance guarantees.",
-      image: "/products/solar-panel.avif",
+      image: "./products/solar-panel.avif",
     },
     {
       title: "Hybrid Inverters",
       description: "Smart inverters that efficiently convert DC to AC power while managing energy flow between solar panels, batteries, and the grid.",
-      image: "/products/hybrid-inverter.avif",
+      image: "./products/hybrid-inverter.avif",
     },
     {
       title: "Battery Storage",
       description: "Advanced battery systems that store excess solar energy for use during evenings, cloudy days, or power outages.",
-      image: "/products/batteries.png",
+      image: "./products/batteries.png",
     },
   ];
 

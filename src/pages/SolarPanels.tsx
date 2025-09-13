@@ -59,7 +59,7 @@ const SolarPanels = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg fade-in">
                 <img
-                  src="/products/solar-panel.avif"
+                  src="./products/solar-panel.avif"
                   alt="Solar Panel Installation"
                   className="w-full h-auto object-cover"
                 />

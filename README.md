@@ -36,6 +36,10 @@ npm i
 npm run dev
 ```
 
+## Notes for when hosting somewhere other than github pages
+- Update vite.config.ts to remove  base: "/solvenergy-source"
+- update App.tsx to remove basename from <BrowserRouter basename="/solvenergy-source">
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).

@@ -22,7 +22,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/solvenergy-source">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/solar-panels" element={<SolarPanels />} />

@@ -59,7 +59,7 @@ const BatteryStorage = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg fade-in">
                 <img
-                  src="/products/batteries.png"
+                  src="./products/batteries.png"
                   alt="Battery Storage System"
                   className="w-full h-auto object-cover"
                 />

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Play, Image as ImageIcon, Camera } from "lucide-react";
 import Lightbox from "@/components/ui/lightbox";
-import TestimonialImage1 from "@/testimonials/image1.jpg";
-import TestimonialImage2 from "@/testimonials/image2.jpg";
 
 const TestimonialsSection = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -20,8 +18,8 @@ const TestimonialsSection = () => {
       text: "The owner and staff are very good and share too much information about solar panel",
       rating: 5,
       gallery: [
-        { type: "image" as const, src: TestimonialImage1, alt: "Solar panel installation" },
-        { type: "image" as const, src: TestimonialImage2, alt: "Completed installation" },
+        { type: "image" as const, src: "/testimonials/image1.jpg", alt: "Solar panel installation" },
+        { type: "image" as const, src: "/testimonials/image2.jpg", alt: "Completed installation" },
         // { type: "video" as const, src: "/testimonials/video1.mp4", alt: "Completed installation" },
       ]
     },

@@ -18,8 +18,8 @@ const TestimonialsSection = () => {
       text: "The owner and staff are very good and share too much information about solar panel",
       rating: 5,
       gallery: [
-        { type: "image" as const, src: "/testimonials/image1.jpg", alt: "Solar panel installation" },
-        { type: "image" as const, src: "/testimonials/image2.jpg", alt: "Completed installation" },
+        { type: "image" as const, src: `${import.meta.env.BASE_URL}/testimonials/image1.jpg`, alt: "Solar panel installation" },
+        { type: "image" as const, src: `${import.meta.env.BASE_URL}/testimonials/image2.jpg`, alt: "Completed installation" },
         // { type: "video" as const, src: "/testimonials/video1.mp4", alt: "Completed installation" },
       ]
     },

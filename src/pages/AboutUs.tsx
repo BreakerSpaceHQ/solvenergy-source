@@ -195,7 +195,7 @@ const AboutUs = () => {
                     <div className="space-y-4">
                       <div>
                         <p className="font-semibold text-gray-700 dark:text-gray-300">Email:</p>
-                        <p className="text-gray-600 dark:text-gray-400">contact@solvenergy.com</p>
+                        <p className="text-gray-600 dark:text-gray-400">contact@solvenergy.in</p>
                       </div>
                       {/* <div className="pt-4">
                         <Button className="bg-solar-gold hover:bg-opacity-90 text-solar-blue w-full">

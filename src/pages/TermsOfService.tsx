@@ -91,7 +91,7 @@ const TermsOfService = () => {
               </p>
               <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg mt-2">
                 <p className="text-gray-600 dark:text-gray-300">
-                  Email: contact@solvenergy.com
+                  Email: contact@solvenergy.in
                 </p>
               </div>
             </section>

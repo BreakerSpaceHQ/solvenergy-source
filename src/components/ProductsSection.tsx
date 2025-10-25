@@ -22,7 +22,7 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="products" className="solar-section bg-solar-light dark:bg-gray-900 py-24 transition-colors duration-300">
+    <section id="products" className="solar-section bg-[#fffab2b3] dark:bg-gray-800 py-24 transition-colors duration-300">
       <div className="solar-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="section-title">Premium Solar Products</h2>

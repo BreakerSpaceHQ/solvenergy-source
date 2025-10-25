@@ -7,9 +7,32 @@ import LoadCalculatorSection from "@/components/LoadCalculatorSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
+import { useLocation } from 'react-router-dom';
 
 const Index = () => {
+  const location = useLocation();
+  const pathname = location.hash;
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
+    if(pathname) {
+      const sectionId = pathname.slice(1);
+      if(sectionId) {
+        scrollToSection(sectionId);
+      }
+    } else {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
     // Initialize intersection observer for animation
     const observer = new IntersectionObserver(
       (entries) => {
@@ -36,10 +59,10 @@ const Index = () => {
       <Navbar />
       <main className="transition-colors duration-500">
         <HeroSection />
-        <ProductsSection />
         <LoadCalculatorSection />
+        <ProductsSection />
         <BenefitsSection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
       </main>
       <Footer />
     </>

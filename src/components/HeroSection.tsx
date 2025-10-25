@@ -17,7 +17,7 @@ const HeroSection = () => {
   }, []);
 
   const scrollToNextSection = () => {
-    const nextSection = document.querySelector('#products, section:nth-of-type(2)');
+    const nextSection = document.getElementById('calculator');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }

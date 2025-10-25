@@ -85,7 +85,7 @@ const LoadCalculatorSection = () => {
   const recommendedSolarPanels = Math.ceil(totalDailyLoad / 5); // Assuming 5 peak sun hours
 
   return (
-    <section id="calculator" className="solar-section bg-[#fffab2b3] dark:bg-gray-800 py-24 transition-colors duration-300">
+    <section id="calculator" className="solar-section bg-solar-light dark:bg-gray-900 py-24 transition-colors duration-300">
       <div className="solar-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center mb-10">
@@ -149,6 +149,28 @@ const LoadCalculatorSection = () => {
                         placeholder="e.g., 100"
                         value={newAppliance.wattage || ''}
                         onChange={(e) => setNewAppliance({...newAppliance, wattage: Number(e.target.value)})}
+                        className="dark:bg-gray-800 dark:border-gray-600"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="appliance-quantity" className="text-xs text-gray-600 dark:text-gray-400 mb-1 block">Quantity</Label>
+                      <Input
+                        id="appliance-quantity"
+                        type="number"
+                        placeholder="e.g., 2"
+                        value={newAppliance.quantity || ''}
+                        onChange={(e) => setNewAppliance({...newAppliance, quantity: Number(e.target.value)})}
+                        className="dark:bg-gray-800 dark:border-gray-600"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="appliance-hours" className="text-xs text-gray-600 dark:text-gray-400 mb-1 block">Hours/Day</Label>
+                      <Input
+                        id="appliance-hours"
+                        type="number"
+                        placeholder="e.g., 4"
+                        value={newAppliance.hours || ''}
+                        onChange={(e) => setNewAppliance({...newAppliance, hours: Number(e.target.value)})}
                         className="dark:bg-gray-800 dark:border-gray-600"
                       />
                     </div>

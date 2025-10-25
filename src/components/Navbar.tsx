@@ -33,13 +33,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToProducts = () => {
-    const productsSection = document.getElementById('products');
-    if (productsSection) {
-      productsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -90,7 +83,7 @@ const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={`${isScrolled ? "text-gray-800" : theme === 'dark' ? "text-white" : "text-gray-800"} dark:text-gray-200 hover:text-solar-green transition-colors font-medium bg-transparent hover:bg-transparent`}>
+                <NavigationMenuTrigger className={`${isScrolled ? "text-gray-800" : theme === 'dark' ? "text-white" : "text-gray-800"} dark:text-gray-200 transition-colors text-md font-medium bg-transparent hover:bg-transparent`}>
                   Products
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -133,21 +126,22 @@ const Navbar = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <button 
+          {/* <button 
             onClick={handlePowerCalculatorClick}
-            className={`${isScrolled ? "text-gray-800" : theme === 'dark' ? "text-white" : "text-gray-800"} dark:text-gray-200 hover:text-solar-green transition-colors font-medium`}
+            className={`${isScrolled ? "text-gray-800" : theme === 'dark' ? "text-white" : "text-gray-800"} dark:text-gray-200 transition-colors font-medium`}
           >
             Power Calculator
-          </button>
-          <Link to="/about-us" className={`${isScrolled ? "text-gray-800" : theme === 'dark' ? "text-white" : "text-gray-800"} dark:text-gray-200 hover:text-solar-green transition-colors font-medium`}>
+          </button> */}
+          <Link to="/about-us" className={`${isScrolled ? "text-gray-800" : theme === 'dark' ? "text-white" : "text-gray-800"} dark:text-gray-200 transition-colors font-medium rounded-md px-3 py-2 hover:bg-accent/50`}>
             About Us
           </Link>
-          <Button 
-            onClick={scrollToProducts}
-            className={`${isScrolled ? "bg-solar-blue" : "bg-gray-800"} hover:bg-opacity-90 text-white dark:bg-blue-700 dark:hover:bg-blue-800 transition-colors`}
+          <Link 
+            to="/#calculator"
+            onClick={() => scrollToSection("calculator")}
+            className={`${isScrolled ? "bg-solar-blue" : "bg-gray-800"} ${theme === 'dark' ? "" : "hover:text-solar-blue"} rounded-md px-3 py-2 font-semibold hover:bg-accent text-md text-white dark:bg-blue-700 dark:hover:bg-blue-800 transition-colors`}
           >
-            Get Started
-          </Button>
+            Power Calculator
+          </Link>
           <Button variant="ghost" size="icon" onClick={toggleTheme} className="ml-2 transition-transform hover:rotate-12 duration-300">
             {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
@@ -177,27 +171,27 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-800 shadow-lg py-4 transition-all duration-300 transform animate-accordion-down">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
-            <div className="text-solar-blue hover:text-solar-green dark:text-white font-medium py-2 transition-colors">
+            <div className="text-solar-blue dark:text-white font-medium py-2 transition-colors">
               Products
             </div>
             <div className="pl-4 space-y-2">
               <Link
                 to="/solar-panels"
-                className="block text-solar-blue hover:text-solar-green dark:text-gray-300 font-medium py-1 transition-colors"
+                className="block text-solar-blue dark:text-gray-300 font-medium py-1 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Solar Panels
               </Link>
               <Link
                 to="/hybrid-inverters"
-                className="block text-solar-blue hover:text-solar-green dark:text-gray-300 font-medium py-1 transition-colors"
+                className="block text-solar-blue dark:text-gray-300 font-medium py-1 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Hybrid Inverters
               </Link>
               <Link
                 to="/battery-storage"
-                className="block text-solar-blue hover:text-solar-green dark:text-gray-300 font-medium py-1 transition-colors"
+                className="block text-solar-blue dark:text-gray-300 font-medium py-1 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Battery Storage
@@ -208,26 +202,26 @@ const Navbar = () => {
                 handlePowerCalculatorClick();
                 setMobileMenuOpen(false);
               }}
-              className="text-solar-blue hover:text-solar-green dark:text-white font-medium py-2 transition-colors text-left"
+              className="text-solar-blue dark:text-white font-medium py-2 transition-colors text-left"
             >
               Power Calculator
             </button>
             <Link
               to="/about-us"
-              className="text-solar-blue hover:text-solar-green dark:text-white font-medium py-2 transition-colors"
+              className="text-solar-blue dark:text-white font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
             </Link>
-            <Button 
+            <Link
+              to="/#calculator" 
               onClick={() => {
-                scrollToProducts();
                 setMobileMenuOpen(false);
               }}
               className="bg-solar-blue hover:bg-opacity-90 text-white dark:bg-blue-700 dark:hover:bg-blue-800 transition-colors w-full"
             >
-              Get Started
-            </Button>
+              Power Calculator
+            </Link>
           </div>
         </div>
       )}

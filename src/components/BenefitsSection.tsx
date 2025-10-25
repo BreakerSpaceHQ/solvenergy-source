@@ -59,7 +59,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section id="benefits" className="solar-section bg-gray-50 dark:bg-gray-800 transition-colors duration-300" ref={sectionRef}>
+    <section id="benefits" className="solar-section bg-solar-light dark:bg-gray-900 transition-colors duration-300" ref={sectionRef}>
       <div className="solar-container">
         <div className="text-center max-w-3xl mx-auto mb-16 fade-in">
           <h2 className="section-title dark:text-white">Benefits of Solar Energy</h2>

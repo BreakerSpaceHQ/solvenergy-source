@@ -39,7 +39,7 @@ const Footer = () => {
 
           {/* Contact Info & Social */}
           <div className="space-y-4">
-            <Link to="/contact-us" className="text-gray-300 hover:text-solar-gold transition-colors">Contact Us</Link>
+            <Link to="/contact" className="text-gray-300 hover:text-solar-gold transition-colors">Contact Us</Link>
             <div className="space-y-3">
               <a className="text-gray-300 hover:text-solar-gold transition-colors" href="mailto:contact@solvenergy.in">contact@solvenergy.in</a>
                 <div className="flex gap-4">

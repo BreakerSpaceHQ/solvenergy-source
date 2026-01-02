@@ -19,7 +19,13 @@ const HeroSection = () => {
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('calculator');
     if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+      const offsetTop = nextSection.offsetTop - 64; // 64px extra padding
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+      // Update URL hash
+      window.history.replaceState(null, '', '#calculator');
     }
   };
 

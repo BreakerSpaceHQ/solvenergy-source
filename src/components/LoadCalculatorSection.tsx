@@ -29,6 +29,19 @@ const LoadCalculatorSection = () => {
     hours: 1
   });
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offsetTop = section.offsetTop - 64; // 64px extra padding
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+      // Update URL hash
+      window.history.replaceState(null, '', `#${sectionId}`);
+    }
+  };
+
   const commonAppliances = [
     { name: 'LED Bulb (9W)', wattage: 9 },
     { name: 'CFL Bulb (18W)', wattage: 18 },
@@ -307,7 +320,16 @@ const LoadCalculatorSection = () => {
               </CardContent>
             </Card>
 
-            <Link to="/contact" className="block">
+            <Link
+              to="/#contact"
+              className="block"
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  scrollToSection("contact");
+                }
+              }}
+            >
               <Button className="w-full bg-solar-gold hover:bg-opacity-90 text-solar-blue font-semibold text-xl py-8 transition-transform hover:scale-105 duration-300">
                 Contact us for quotations!
               </Button>

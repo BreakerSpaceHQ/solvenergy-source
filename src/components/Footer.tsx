@@ -1,8 +1,22 @@
 import React from "react";
 import { Sun } from "lucide-react";
 import { Link } from "react-router-dom";
+import { off } from "process";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offsetTop = section.offsetTop - 64; // 64px extra padding
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+      // Update URL hash
+      window.history.replaceState(null, '', `#${sectionId}`);
+    }
+  };
+
   return (
     <footer className="bg-solar-blue text-white py-12">
       <div className="container mx-auto px-4">
@@ -39,7 +53,18 @@ const Footer = () => {
 
           {/* Contact Info & Social */}
           <div className="space-y-4">
-            <Link to="/contact" className="text-gray-300 hover:text-solar-gold transition-colors">Contact Us</Link>
+            <Link
+              to="/#contact"
+              className="text-gray-300 hover:text-solar-gold transition-colors"
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  scrollToSection("contact");
+                }
+              }}
+            >
+              Contact Us
+            </Link>
             <div className="space-y-3">
               <a className="text-gray-300 hover:text-solar-gold transition-colors" href="mailto:contact@solvenergy.in">contact@solvenergy.in</a>
                 <div className="flex gap-4">

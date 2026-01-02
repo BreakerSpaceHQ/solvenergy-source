@@ -33,10 +33,22 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Update URL to remove hash
+    window.history.replaceState(null, '', window.location.pathname);
+  };
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const offsetTop = section.offsetTop - 64; // 64px extra padding
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+      // Update URL hash
+      window.history.replaceState(null, '', `#${sectionId}`);
     }
   };
 
@@ -50,7 +62,15 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/">
+          <Link
+            to="/"
+            onClick={(e) => {
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                scrollToTop();
+              }
+            }}
+          >
             <svg width="192" height="108" viewBox="0 0 1920 1080" version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg">
               <g id="g2" transform="translate(-6.0890488)">
                 <path className="stroke-[#000000] dark:stroke-[#ffffff] dark:fill-[#ffffff]" aria-label="S" d="m 179.83784,471.73318 h 99.49886 v 11.43469 h -99.49886 q -10.58136,0 -18.0907,7.50935 -7.50935,7.50934 -7.50935,18.0907 0,10.58135 7.50935,18.0907 7.50934,7.33868 18.0907,7.33868 h 62.46412 q 15.36003,0 26.11206,10.92269 10.92268,10.75202 10.92268,26.11205 0,15.36003 -10.92268,26.28272 -10.75203,10.75202 -26.11206,10.75202 H 142.8031 V 596.8321 h 99.49886 q 10.58136,0 18.09071,-7.50935 7.50934,-7.50935 7.50934,-18.09071 0,-10.58135 -7.50934,-17.92003 -7.50935,-7.50935 -18.09071,-7.50935 h -62.46412 q -15.36003,0 -26.28272,-10.75202 -10.75202,-10.92269 -10.75202,-26.28272 0,-15.36003 10.75202,-26.11205 10.92269,-10.92269 26.28272,-10.92269 z" />
@@ -154,7 +174,11 @@ const Navbar = () => {
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             <Link
               to="/#calculator"
-              onClick={() => {
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  scrollToSection("calculator");
+                }
                 setMobileMenuOpen(false);
               }}
               className="text-solar-blue dark:text-white font-medium py-2 transition-colors text-left"
@@ -188,9 +212,15 @@ const Navbar = () => {
               </Link>
             </div>
             <Link
-              to="/contact"
+              to="/#contact"
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  scrollToSection("contact");
+                }
+                setMobileMenuOpen(false);
+              }}
               className="text-solar-blue dark:text-white font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               Contact Us
             </Link>

@@ -9,7 +9,6 @@ import NotFound from "./pages/NotFound";
 import SolarPanels from "./pages/SolarPanels";
 import HybridInverters from "./pages/HybridInverters";
 import BatteryStorage from "./pages/BatteryStorage";
-import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -28,7 +27,6 @@ const App = () => (
             <Route path="/solar-panels" element={<SolarPanels />} />
             <Route path="/hybrid-inverters" element={<HybridInverters />} />
             <Route path="/battery-storage" element={<BatteryStorage />} />
-            <Route path="/contact" element={<ContactUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

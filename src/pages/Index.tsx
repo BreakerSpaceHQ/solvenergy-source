@@ -6,12 +6,12 @@ import ProductsSection from "@/components/ProductsSection";
 import LoadCalculatorSection from "@/components/LoadCalculatorSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useLocation } from 'react-router-dom';
 
 const Index = () => {
   const location = useLocation();
-  const pathname = location.hash;
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -21,18 +21,29 @@ const Index = () => {
   };
 
   useEffect(() => {
-    if(pathname) {
-      const sectionId = pathname.slice(1);
-      if(sectionId) {
-        scrollToSection(sectionId);
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const sectionId = hash.slice(1);
+        if (sectionId) {
+          // Small delay to ensure the page has rendered
+          setTimeout(() => scrollToSection(sectionId), 100);
+        }
+      } else {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
       }
-    } else {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
+    };
+
+    // Handle initial load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
     // Initialize intersection observer for animation
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,6 +62,7 @@ const Index = () => {
 
     return () => {
       observer.disconnect();
+      window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
@@ -63,6 +75,7 @@ const Index = () => {
         <ProductsSection />
         <BenefitsSection />
         {/* <TestimonialsSection /> */}
+        <ContactSection />
       </main>
       <Footer />
     </>

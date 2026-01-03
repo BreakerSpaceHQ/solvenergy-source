@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Sun, MoonStar } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -16,21 +16,26 @@ const HeroSection = () => {
     }
   }, []);
 
-  const scrollToNextSection = () => {
-    const nextSection = document.getElementById('calculator');
-    if (nextSection) {
-      const offsetTop = nextSection.offsetTop - 64; // 64px extra padding
+  const scrollToCalculator = () => {
+    const calculator = document.getElementById('calculator');
+    if (calculator) {
       window.scrollTo({
-        top: offsetTop,
+        top: calculator.offsetTop - 64,
         behavior: 'smooth'
       });
-      // Update URL hash
       window.history.replaceState(null, '', '#calculator');
     }
   };
 
-  const navigateToSolarPanels = () => {
-    navigate('/solar-panels');
+  const scrollToContact = () => {
+    const contact = document.getElementById('contact');
+    if (contact) {
+      window.scrollTo({
+        top: contact.offsetTop - 64,
+        behavior: 'smooth'
+      });
+      window.history.replaceState(null, '', '#contact');
+    }
   };
 
   return (
@@ -57,25 +62,28 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="text-white transform transition-all duration-1000 fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-2xl md:text-2xl lg:text-4xl font-bold mb-6">
               Harness the Power of the Sun
+            </h2>
+            <h1 className="text-5xl md:text-5xl lg:text-8xl font-thin font-gruppo mb-4">
+              SOLV<span className="text-4xl md:text-4xl lg:text-7xl font-sans font-light">Ξ</span>NERGY
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-100">
-              Your trusted local retailer for premium solar panels, hybrid inverters, and battery solutions. Visit our store to power your home sustainably.
+              Premium solar panels, hybrid inverters, and battery solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                onClick={scrollToNextSection}
+                onClick={scrollToCalculator}
                 className={`${theme === 'dark' ? 'bg-blue-500 hover:bg-blue-600 text-white' : 'bg-solar-gold hover:bg-opacity-90 text-solar-blue hover:bg-white'} font-medium text-lg px-6 py-6 transition-transform hover:scale-105 duration-300`}
               >
                 Estimate
               </Button>
               <Button 
-                onClick={navigateToSolarPanels}
+                onClick={scrollToContact}
                 variant="outline" 
                 className={`${theme === 'dark' ? 'border-blue-400 text-white bg-transparent hover:bg-blue-900' : 'border-white text-white bg-solar-blue hover:bg-white hover:text-solar-blue'} font-medium text-lg px-6 py-6 transition-transform hover:scale-105 duration-300`}
               >
-                Products
+                Contact
               </Button>
             </div>
           </div>

@@ -104,16 +104,16 @@ const Navbar = () => {
                   Products
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-4 w-[400px]">
+                  <div className="grid gap-3 p-2 w-[160px]">
                     <NavigationMenuLink asChild>
                       <Link
                         to="/solar-panels"
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-gray-900 dark:text-gray-100"
                       >
                         <div className="text-sm font-medium leading-none">Solar Panels</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-gray-600 dark:text-gray-400">
+                        {/* <p className="line-clamp-2 text-sm leading-snug text-gray-600 dark:text-gray-400">
                           High-efficiency solar panels for clean energy generation
-                        </p>
+                        </p> */}
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
@@ -122,9 +122,9 @@ const Navbar = () => {
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-gray-900 dark:text-gray-100"
                       >
                         <div className="text-sm font-medium leading-none">Hybrid Inverters</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-gray-600 dark:text-gray-400">
+                        {/* <p className="line-clamp-2 text-sm leading-snug text-gray-600 dark:text-gray-400">
                           Advanced inverters combining solar and battery management
-                        </p>
+                        </p> */}
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
@@ -133,9 +133,9 @@ const Navbar = () => {
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-gray-900 dark:text-gray-100"
                       >
                         <div className="text-sm font-medium leading-none">Battery Storage</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-gray-600 dark:text-gray-400">
+                        {/* <p className="line-clamp-2 text-sm leading-snug text-gray-600 dark:text-gray-400">
                           Energy storage solutions for maximum efficiency
-                        </p>
+                        </p> */}
                       </Link>
                     </NavigationMenuLink>
                   </div>
